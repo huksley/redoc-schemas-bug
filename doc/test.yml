@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: test
+  description: test
+paths:
+  /bookings/options/:
+    get:
+      summary: Available transport options
+      description: Available transport options
+      tags:
+        - Booking
+      parameters:
+        - name: test
+          description: Test parameter
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: dsadsa
+          content:  
+            application/json:
+              schema:
+                $ref: ../schemas/tsp/booking-options-list/response.json
+  /booking/create:
+    post:
+      summary: Create booking
+      description: Creates booking
+      tags:
+        - Booking
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/tsp/booking-create/request.json
+      responses:
+        '200':
+          description: Booking information
+          content:
+              application/json:
+                schema:
+                  $ref: ../schemas/tsp/booking-create/response.json
+
